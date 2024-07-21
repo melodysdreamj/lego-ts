@@ -2036,4 +2036,16 @@ export class CheckExampleFirestore {
         await this.getObjectReference().doc(docId).delete();
     }
 
+    static async plus1I000Transaction(docId: string): Promise<void> {
+        await this.db.runTransaction(async (transaction) => {
+            const docRef = this.getObjectReference().doc(docId);
+            const doc = await transaction.get(docRef);
+            const object = doc.data() as CheckExample; // Cast to CheckExample
+            if (object) {
+                object.i000 += 1; // Now TypeScript knows object has i000 property
+                transaction.update(docRef, object.toMap());
+            }
+        });
+    }
+
 }
