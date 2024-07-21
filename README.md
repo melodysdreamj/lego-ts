@@ -6,3 +6,22 @@
     - **Program**: `npx`
     - **Arguments**: `tsx $FilePathRelativeToProjectRoot$`
     - **Working directory**: `$ProjectFileDir$`
+
+## Obtaining the `serviceAccountKey.json` File
+
+The `serviceAccountKey.json` file is the service account key for your Firebase project. This file can be generated and downloaded from the Firebase console. Follow these steps to obtain your service account key:
+
+### Generating and Downloading the Service Account Key
+
+1. **Login to Firebase Console**: Login to the [Firebase Console](https://console.firebase.google.com/).
+
+2. **Select Project**: Choose the Firebase project that uses Firestore.
+
+3. **Navigate to Project Settings**: Click on "Project Settings" in the top left menu of the Firebase console.
+
+4. **Service Accounts**: Select the "Service Accounts" tab from the top of the settings page.
+
+5. **Generate New Private Key**:
+   - Click on the "Generate New Private Key" button at the bottom of the page.
+   - In the warning dialog, click "Generate Key".
+   - A JSON file will be automatically downloaded.
